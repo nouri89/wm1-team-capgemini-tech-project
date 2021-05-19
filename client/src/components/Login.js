@@ -27,7 +27,7 @@ const Login = ({ setAuth }) => {
 				setAuth(true);
 				toast.success("Login successfully!");
 			} else {
-				console.log("Logging unauthraised");
+				
 				setAuth(false);
 				toast.error(parsRes);
 			}

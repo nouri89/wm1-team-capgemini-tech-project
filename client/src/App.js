@@ -14,7 +14,7 @@ toast.configure();
 
 function App() {
 	const [isAuthanticated, setIsAuthanticated] = useState(false);
-	console.log(isAuthanticated);
+	
 	const setAuth = (boolean) => {
 		setIsAuthanticated(boolean);
 	};
@@ -26,8 +26,7 @@ function App() {
 				headers: { token: localStorage.token },
 			});
 			const parsRes = await response.json();
-			console.log(parsRes + "in app component");
-
+	
 			parsRes === true ? setIsAuthanticated(true) : setIsAuthanticated(false);
 		} catch (error) {
 			console.log(error);

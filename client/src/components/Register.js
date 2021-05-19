@@ -18,26 +18,23 @@ const Register = ({ setAuth }) => {
 		e.preventDefault();
 		try {
 			const body = { name, email, password, role };
-			console.log(body);
+			
 			const response = await fetch("/auth/register", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(body),
 			});
 			const parsRes = await response.json();
-			console.log(parsRes.token + " look twice");
+
 
 			if (parsRes.token) {
-				console.log(typeof parsRes + "look here");
-				console.log("----------------");
-				console.log("Registartion granted " + parsRes);
+				
 				localStorage.setItem("token", parsRes.token);
 				toast.success("Registered successfuly");
 				setAuth(true);
 			}
 			else {
-				console.log("Registartion NOT granted !" + parsRes);
-				console.log("Registion error");
+				
 				setAuth(false);
 				toast.error(parsRes);
 			} 

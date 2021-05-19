@@ -11,10 +11,10 @@ const Dashboard = ({ setAuth }) => {
 			});
 
 			const parsRes = await response.json();
-			console.log(parsRes);
+			
 
 			setName(parsRes[0].name);
-			console.log(name);
+			
 		} catch (error) {
 			console.log(error);
 		}

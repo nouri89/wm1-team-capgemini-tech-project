@@ -4,18 +4,10 @@ const bcrypt = require("bcrypt");
 const jwtGenerator = require("../utils/jwtGenerator");
 const validInfo = require("../middleware/validInfo");
 const authorisation = require("../middleware/authorisation");
-//const { json } = require("express");
 
-/*router.get("/", (req, res) => {
-	try {
-		res.json(" yes you are  connected");
-	} catch (error) {
-		console.log(error);
-	}
-});*/
 
 router.post("/register", validInfo, async (req, res) => {
-	console.log("got here");
+	
 	try {
 		//1.destructure  the request.body (name,email, password)
 		const { name, email, password, role } = req.body;
@@ -26,7 +18,7 @@ router.post("/register", validInfo, async (req, res) => {
 		]);
 
 		if (user.rows.length !== 0) {
-			console.log("User already exist");
+			
 			return res.status(401).json("User already exist");
 		}
 
@@ -76,7 +68,7 @@ router.post("/login", validInfo, async (req, res) => {
 			password,
 			user.rows[0].password
 		);
-		//	console.log(isValidPassword);
+	
 		if (!isValidPassword) {
 			return res.status(401).json("Password or email incorrect");
 		}
@@ -91,7 +83,7 @@ router.post("/login", validInfo, async (req, res) => {
 	}
 });
 router.get("/is-verify", authorisation, async (req, res) => {
-	console.log("got here is verfiy");
+	
 	try {
 		res.json(true);
 	} catch (error) {
