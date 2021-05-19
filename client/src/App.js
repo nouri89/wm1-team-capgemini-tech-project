@@ -18,9 +18,9 @@ function App() {
 	const setAuth = (boolean) => {
 		setIsAuthanticated(boolean);
 	};
-
+// fix issue here
 	async function isAuth() {
-	cyf-capgemini-homework-club	try {
+		try {
 			const response = await fetch("/auth/is-verify", {
 				method: "GET",
 				headers: { token: localStorage.token },
