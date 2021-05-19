@@ -18,4 +18,8 @@ app.use("/dashboard", require("./routes/dashboard"));
 
 const PORT = process.env.PORT || 3021;
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+})
+
 app.listen(PORT, () => console.log(`Server listening in port ${PORT}`));
