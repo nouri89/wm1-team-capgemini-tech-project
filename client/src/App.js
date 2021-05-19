@@ -20,7 +20,7 @@ function App() {
 	};
 
 	async function isAuth() {
-		try {
+	cyf-capgemini-homework-club	try {
 			const response = await fetch("/auth/is-verify", {
 				method: "GET",
 				headers: { token: localStorage.token },
