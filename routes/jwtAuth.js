@@ -82,7 +82,7 @@ router.post("/login", validInfo, async (req, res) => {
 		res.status(500).json("Server Error");
 	}
 });
-router.get("/is-verify", authorisation, async (req, res) => {
+router.post("/is-verify", authorisation, async (req, res) => {
 	
 	try {
 		res.json(true);

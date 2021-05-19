@@ -5,7 +5,7 @@ const Dashboard = ({ setAuth }) => {
 	const [name, setName] = useState("");
 	const getName = async () => {
 		try {
-			const response = await fetch("/dashboard/", {
+			const response = await fetch("/dashboard", {
 				method: "GET",
 				headers: { token: localStorage.token },
 			});
@@ -22,7 +22,7 @@ const Dashboard = ({ setAuth }) => {
 
 	useEffect(() => {
 		getName();
-	});
+	},[]);
 	const logout = (e) => {
 		e.preventDefault();
 		localStorage.removeItem("token");

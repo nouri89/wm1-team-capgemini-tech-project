@@ -18,7 +18,7 @@ const Register = ({ setAuth }) => {
 		e.preventDefault();
 		try {
 			const body = { name, email, password, role };
-			
+
 			const response = await fetch("/auth/register", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -26,25 +26,23 @@ const Register = ({ setAuth }) => {
 			});
 			const parsRes = await response.json();
 
-
 			if (parsRes.token) {
-				
 				localStorage.setItem("token", parsRes.token);
 				toast.success("Registered successfuly");
 				setAuth(true);
-			}
-			else {
-				
+			} else {
 				setAuth(false);
 				toast.error(parsRes);
-			} 
+			}
 		} catch (error) {
 			console.log(error);
 		}
 	};
 	return (
 		<Fragment>
-			<h1 className="text-center my-3">Welcome to CYF Capgemini Homework club webpage</h1>
+			<h1 className="text-center my-3">
+				Welcome to CYF Capgemini Homework club webpage
+			</h1>
 			<br />
 			<h2 className="text-center my-2">Please Register to Join the Club</h2>
 			<form onSubmit={onSubmitForm}>
