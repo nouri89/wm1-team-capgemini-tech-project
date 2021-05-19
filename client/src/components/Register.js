@@ -47,7 +47,7 @@ const Register = ({ setAuth }) => {
 	};
 	return (
 		<Fragment>
-			<h1 className="text-center my-5">Register</h1>
+			<h1 className="text-center my-5">Register to join CYF Capgemini Homework club</h1>
 			<form onSubmit={onSubmitForm}>
 				<input
 					type="text"
