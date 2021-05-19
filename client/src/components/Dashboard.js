@@ -5,7 +5,7 @@ const Dashboard = ({ setAuth }) => {
 	const [name, setName] = useState("");
 	const getName = async () => {
 		try {
-			const response = await fetch("http://localhost:3021/dashboard/", {
+			const response = await fetch("/dashboard/", {
 				method: "GET",
 				headers: { token: localStorage.token },
 			});
