@@ -26,7 +26,7 @@ function App() {
 				headers: { token: localStorage.token },
 			});
 			const parsRes = await response.json();
-			console.log(parsRes +"in app component");
+			console.log(parsRes + "in app component");
 
 			parsRes === true ? setIsAuthanticated(true) : setIsAuthanticated(false);
 		} catch (error) {
@@ -43,6 +43,17 @@ function App() {
 			<Router>
 				<div className="container">
 					<Switch>
+						<Route
+							exact
+							path="/"
+							render={(props) =>
+								!isAuthanticated ? (
+									<Register {...props} setAuth={setAuth} />
+								) : (
+									<Redirect to="/login" />
+								)
+							}
+						/>
 						<Route
 							exact
 							path="/login"
