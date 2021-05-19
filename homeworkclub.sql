@@ -1,3 +1,4 @@
+--create database homeworkclub;
 --SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'some_table'; a query to show a tab
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
@@ -42,4 +43,7 @@ expertise_id  INT REFERENCES expertise(id)NOT NULL,
 PRIMARY KEY (volunteer_id,expertise_id)
 
 );
---INSERT INTO users  (name,email,password,role) values ('Kari','kari@capgemini.com','letmein','Admin');
+INSERT INTO users  (name,email,password,role) values ('Kari','kari@capgemini.com','letmein','Admin');
+INSERT INTO users  (name,email,password,role) values ('Kirsty','kirsty@capgemini.com','letmein','Admin');
+INSERT INTO users  (name,email,password,role) values ('Sian','sian@capgemini.com','letmein','Admin');
+INSERT INTO users  (name,email,password,role) values ('Dora','dora@capgemini.com','letmein','Admin');
